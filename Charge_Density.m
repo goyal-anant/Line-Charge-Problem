@@ -3,8 +3,8 @@ clc; clear all; close all;
 
 L = 1;  %length of the wire
 a = 0.001;  %radius of the wire
-N = 5;  %discretization level
-delta = L/N;    %discretization step
+N = 20;  %discretization level
+delta = L/N;     %files are not changed. To see others% changes, you need to merge in the origin changes to your local branches.%discretization step
 y_m = delta/2 : delta : L-delta/2;  %matching points
 epsilon_o = 8.87*10^-12;    %permitivity
 b = 4*pi*epsilon_o*ones(N,1);   
@@ -27,7 +27,9 @@ for y_prime_v = 1:N
     rho(y_prime_v) = a_n' * g;
 end
 
-% plotting rho vs length for a given 'N'
+%plotting rho vs length for a given 'N'
 fplot(rho)
 axis([0 L 0 10])
+xlabel('length of the wire (in meter)');
+ylabel('charge density (in pC/m)');
 toc
