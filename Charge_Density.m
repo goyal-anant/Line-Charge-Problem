@@ -1,14 +1,14 @@
 tic
 clc; clear all; close all;
 
-L = 1;  %length of the wire
-a = 0.001;  %radius of the wire
-N = 20;  %discretization level
-delta = L/N;     %files are not changed. To see others% changes, you need to merge in the origin changes to your local branches.%discretization step
-y_m = delta/2 : delta : L-delta/2;  %matching points
-epsilon_o = 8.87*10^-12;    %permitivity
+L = 1;                                                      %length of the wire
+a = 0.001;                                                  %radius of the wire
+N = 20;                                                     %discretization level
+delta = L/N;                                                %discretization step
+y_m = delta/2 : delta : L-delta/2;                          %matching points
+epsilon_o = 8.87*10^-12;                                    %permitivity
 b = 4*pi*epsilon_o*ones(N,1);   
-syms y_prime    %variable of integration
+syms y_prime                                                %variable of integration
 
 %constructing A and basis function 'g'
 for i = 1 : N
